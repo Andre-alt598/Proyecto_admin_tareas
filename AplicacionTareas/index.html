@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,14 +24,16 @@
     <div class="right-side">
       <form class="login-form">
         <h2>Iniciar sesión</h2>
-        <input type="text" placeholder="Usuario" required>
-        <input type="password" placeholder="Contraseña" required>
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <input type="password" id="contrasena" placeholder="Contraseña" required>
         <button type="submit">Entrar</button>
+        <p id="error-msg" style="color: red; margin-top: 10px;"></p>
       </form>
     </div>
   </div>
   <div class="footer">
     <p>&copy; 2025 Todos los derechos reservados</p>
   </div>
+  <script src="BD/login.js"></script>
 </body>
 </html>

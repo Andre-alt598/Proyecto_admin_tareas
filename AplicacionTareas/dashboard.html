@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="CSS/styles2.css">
+</head>
+<body>
+  <div class="title-bar">
+    <h1>Dashboard</h1>
+    <div id="saludo-usuario" class="saludo"></div>
+    <button type="button" class="logout-btn">Cerrar sesión</button>
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <div class="task-form">
+        <h2>Nueva Tarea</h2>
+        <input type="text" id="task-input" placeholder="Ingresa una tarea" required>
+        <select id="task-status">
+          <option value="En espera">En espera</option>
+          <option value="En progreso">En progreso</option>
+          <option value="Completada">Completada</option>
+        </select>
+        <button id="save-task">Guardar</button>
+      </div>
+      <div class="task-list">
+        <h2>Mis Tareas</h2>
+        <ul id="task-list"></ul>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="chart-container">
+        <h2>Resumen de Tareas</h2>
+        <canvas id="task-chart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="BD/dashboard.js"></script>
+</body>
+</html>
