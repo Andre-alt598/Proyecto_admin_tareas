@@ -141,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botón "Cerrar sesión"
   document.querySelector(".logout-btn").addEventListener("click", () => {
-    console.log("Cerrando sesión...");
     localStorage.removeItem("tareas");
     localStorage.removeItem("usuario");
     window.location.href = "index.html";
