@@ -1,12 +1,41 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holaaaaaaaaaaaaaa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Dividido</title>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-    <h1>Merequetenge</h1>
-    <h2>que tal?</h2>
+<body class="login-page">
+  <div class="title-bar">
+    <h1>Gestor de Tareas</h1>
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <div class="text-area">
+        <h2>Información importante</h2>
+        <p>Aquí puedes encontrar toda la información que necesitas.</p>
+      </div>
+      <div class="image-area">
+        <img src="imagen.jpg" alt="Imagen de ejemplo">
+      </div>
+    </div>
+    <div class="right-side">
+      <form class="login-form">
+        <h2>Iniciar sesión</h2>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" placeholder="Escribe tu usuario" required>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" placeholder="Escribe tu contraseña" required>
+        <button type="submit">Entrar</button>
+        <p id="error-msg" style="color: red; margin-top: 10px;"></p>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+  <script src="BD/login.js"></script>
 </body>
 </html>

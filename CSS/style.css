@@ -1,0 +1,299 @@
+
+/* Estilos generales, comunes a ambas páginas*/
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.login-page .title-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.dashboard-page .title-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.login-page .title-bar h1 {
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.dashboard-page .title-bar h1{
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.titulo-dashboard {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.login-page .left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.login-page .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.text-area {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-area img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-form {
+  width: 320px;
+  padding: 30px;
+  background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.login-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  justify-content: center;
+  color:#333;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.login-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+.login-form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.login-form button:hover {
+  background-color: #555;
+}
+
+.logout-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 20px;
+
+}
+
+.saludo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  pointer-events: none;
+}
+
+.dashboard-page .left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.task-form {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.task-form h2 {
+  margin-top: 0;
+}
+
+.task-form input,
+.task-form select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.task-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.task-list {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.task-list h2 {
+  margin-top: 0;
+}
+
+.task-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.dashboard-page .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.chart-container h2 {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .login-page .left-side,
+  .login-page .right-side {
+    flex: auto;
+  }
+  .dashboard-page .left-side,
+  .dashboard-page .right-side {
+    flex: auto;
+  }
+
+  .text-area {
+    margin-bottom: 10px;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+}
