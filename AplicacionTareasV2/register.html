@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body class="login-page">
+  <div class="title-bar">
+    <h1>Gestor de Tareas</h1>
+  </div>
+
+  <div class="container">
+    <div class="left-side">
+      <div class="text-area">
+        <p>¡Regístrate para comenzar a organizar tus tareas diarias! La forma más sencilla de ser productivo es tener todo en orden.</p>
+      </div>
+      <div class="image-area">
+        <img src="IMG/imagen muestra.jpg" alt="Imagen de muestra">
+      </div>
+    </div>
+
+    <div class="right-side">
+      <form id="form-register" class="login-form">
+        <h2>Crear cuenta</h2>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required />
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" required />
+
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" required />
+
+        <button type="submit">Registrarse</button>
+        <p id="error-msg"></p>
+
+        <p style="text-align: center; margin-top: 10px;">
+          ¿Ya tienes cuenta?
+          <a href="index.html" style="color: #f2f2f2;">Inicia sesión</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+
+  <script src="JS/register.js"></script>
+</body>
+</html>
