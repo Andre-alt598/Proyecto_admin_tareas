@@ -1,11 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const nombreUsuario = localStorage.getItem("usuario");
 
-  // 🔒 Verifica que haya usuario logueado
+  // Verifica que haya usuario logueado
   if (!nombreUsuario) {
     window.location.href = "index.html";
-    return; // Detiene la ejecución si no hay usuario
+    return;
   }
 
   // Mostrar saludo según la hora
@@ -23,9 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("saludo-usuario").textContent = `${saludo}, ${nombreUsuario}!`;
 
-  const taskInput = document.getElementById("task-input");
-  const taskStatus = document.getElementById("task-status");
-  const saveButton = document.getElementById("save-task");
+  // Referencias a elementos del DOM
+  const taskInput = document.getElementById("task-input");     // título
+  const taskDesc = document.getElementById("task-desc");       // descripción
+  const taskStatus = document.getElementById("task-status");   // estado
+  const saveButton = document.getElementById("save-task");     
   const taskList = document.getElementById("task-list");
 
   let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
@@ -89,10 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
     tareas.forEach((tarea, index) => {
       const li = document.createElement("li");
 
-      const texto = document.createElement("span");
-      texto.textContent = tarea.descripcion;
-      texto.style.marginRight = "10px";
+      // Título y descripción
+      const contenedorTexto = document.createElement("div");
 
+      const tituloElem = document.createElement("strong");
+      tituloElem.textContent = tarea.titulo;
+
+      const descElem = document.createElement("p");
+      descElem.textContent = tarea.descripcion;
+      descElem.style.margin = "5px 0";
+
+      contenedorTexto.appendChild(tituloElem);
+      if (tarea.descripcion) contenedorTexto.appendChild(descElem);
+
+      // Estado
       const select = document.createElement("select");
       ["En espera", "En progreso", "Completada"].forEach(estado => {
         const option = document.createElement("option");
@@ -108,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         actualizarGrafico();
       });
 
+      // Botón eliminar
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "❌";
       btnEliminar.style.marginLeft = "10px";
@@ -117,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderTareas();
       });
 
-      li.appendChild(texto);
+      li.appendChild(contenedorTexto);
       li.appendChild(select);
       li.appendChild(btnEliminar);
       taskList.appendChild(li);
@@ -127,15 +139,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   saveButton.addEventListener("click", () => {
-    const descripcion = taskInput.value.trim();
+    const titulo = taskInput.value.trim();
+    const descripcion = taskDesc.value.trim();
     const estado = taskStatus.value;
 
-    if (descripcion === "") return alert("Escribe una tarea");
+    if (titulo === "") return alert("Escribe un título para la tarea");
 
-    tareas.push({ descripcion, estado });
+    tareas.push({ titulo, descripcion, estado });
     guardarEnLocalStorage();
+
+    // Limpiar campos
     taskInput.value = "";
+    taskDesc.value = "";
     taskStatus.value = "En espera";
+
     renderTareas();
   });
 
