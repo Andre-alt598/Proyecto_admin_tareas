@@ -23,16 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("saludo-usuario").textContent = `${saludo}, ${nombreUsuario}!`;
 
+   // Referencias a elementos del DOM
   const taskInput = document.getElementById("task-input");
+  const taskDescripcion = document.getElementById("taskDescripcion");
   const taskStatus = document.getElementById("task-status");
   const saveButton = document.getElementById("save-task");
   const taskList = document.getElementById("task-list");
 
+  // Carga las tareas al iniciar  
   let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
   const chartCtx = document.getElementById("task-chart").getContext("2d");
   let chart;
 
+  // Guarda las tareas en localStorage
   function guardarEnLocalStorage() {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }
@@ -88,9 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tareas.forEach((tarea, index) => {
       const li = document.createElement("li");
-
       const texto = document.createElement("span");
-      texto.textContent = tarea.descripcion;
+      texto.innerHTML = `<strong>${tarea.descripcion}</strong><br><small>${tarea.detalle || ""}</small>`;
       texto.style.marginRight = "10px";
 
       const select = document.createElement("select");
@@ -128,13 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   saveButton.addEventListener("click", () => {
     const descripcion = taskInput.value.trim();
+    const detalle = taskDescripcion.value.trim();
     const estado = taskStatus.value;
 
     if (descripcion === "") return alert("Escribe una tarea");
 
-    tareas.push({ descripcion, estado });
+    tareas.push({ descripcion, detalle, estado });
     guardarEnLocalStorage();
     taskInput.value = "";
+    taskDescripcion.value = "";
     taskStatus.value = "En espera";
     renderTareas();
   });
