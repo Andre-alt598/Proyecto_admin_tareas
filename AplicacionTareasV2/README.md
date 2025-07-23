@@ -15,7 +15,6 @@ Una aplicación web para crear, gestionar y visualizar tareas por usuario, desar
 - Creación, visualización, edición y eliminación de tareas
 - Visualización gráfica de estado de tareas (Chart.js)
 - Panel de usuario personalizado
-- Estructura separada frontend/backend
 
 ---
 

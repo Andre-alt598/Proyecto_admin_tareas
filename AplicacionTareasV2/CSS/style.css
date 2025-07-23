@@ -345,11 +345,15 @@ body {
 .chart-container {
   width: 100%;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .chart-container h2 {
   text-align: center;
-  color: #F2F2F2; 
+  color: #F2F2F2;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 0; 
 }
 
 /* Versión móvil */
