@@ -35,10 +35,11 @@ AplicacionTareas/
 │ ├── .env 🔒 variables privadas
 │ ├── db.js 🔌 conexión a MariaDB
 │ ├── server.js 🚀 servidor Express
-│ │ └── tareas_db.sql 🗄 script para crear la base de datos
-├── frontend/
+├── frontend
 │ ├── CSS/
+│ ├── IMG/
 │ ├── JS/
+│ ├── PY/
 │ ├── dashboard.html
 │ ├── index.html
 │ └── register.html
@@ -86,7 +87,7 @@ Desde HeidiSQL, MySQL Workbench o consola:
 - Ejecuta el script: backend/sql/tareas_db.sql
 
 ▶️ Ejecutar la aplicación
-Desde la carpeta backend-tareas/:
+Desde la carpeta backend/:
 
 node server.js
 
