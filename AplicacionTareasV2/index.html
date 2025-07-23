@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Dividido</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="login-page">
+  <div class="title-bar">
+    <h1>Gestor de Tareas</h1>
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <div class="text-area">
+        <p>¡Bienvenido a nuestra aplicación de gestión de tareas! Estamos emocionados de 
+          que hayas decidido usar nuestra aplicación para organizar tus tareas diarias. Con esta 
+          herramienta, podrás crear listas, priorizar tareas y marcar las completadas de manera 
+          fácil y rápida. Esperamos que te sea útil para aumentar tu productividad y mantenerte 
+          organizado. ¡Manos a la obra!</p>
+      </div>
+      <div class="image-area">
+        <img src="IMG/imagen muestra.jpg" alt="Imagen de muestra">
+      </div>
+    </div>
+    <div class="right-side">
+      <form id="form-login" class="login-form">
+        <h2>Iniciar sesión</h2>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" placeholder="Escribe tu correo" required>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" placeholder="Escribe tu contraseña" required>
+        <button type="submit">Entrar</button>
+        <p id="error-msg"></p>
+        <p style="text-align: center; margin-top: 10px;">
+          ¿No tienes una cuenta?
+          <a href="register.html" style="color: #f2f2f2;">Regístrate aquí</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+  <script src="JS/login.js"></script>
+</body>
+</html>
