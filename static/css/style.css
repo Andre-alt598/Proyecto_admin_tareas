@@ -1,16 +1,23 @@
 
 /* Estilos generales, comunes a ambas páginas*/
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #101726;
+  color: #F2F2F2;
 }
 
 .login-page .title-bar {
-  background-color: #333;
-  color: #fff;
+  background-color: #1E2940; 
+  color: #F2F2F2; 
   padding: 10px;
   position: fixed;
   top: 0;
@@ -20,8 +27,8 @@ body {
 }
 
 .dashboard-page .title-bar {
-  background-color: #333;
-  color: #fff;
+  background-color: #1E2940;
+  color: #F2F2F2; 
   padding: 10px;
   position: fixed;
   top: 0;
@@ -51,6 +58,7 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #F2F2F2;
 }
 
 .container {
@@ -61,8 +69,8 @@ body {
 }
 
 .footer {
-  background-color: #333;
-  color: #fff;
+   background-color: #1E2940;
+  color: #F2F2F2;
   padding: 10px;
   text-align: center;
   position: fixed;
@@ -81,8 +89,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: #101726;
   padding: 20px;
+  color: #F2F2F2;
 }
 
 .login-page .right-side {
@@ -90,27 +99,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-image: url('../IMG/fondoLogin.png');
+  background-size: cover;
+  background-position: center;
   padding: 20px;
 }
 
 .text-area {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
+  align-content: center;
 }
 
 .image-area img {
   max-width: 100%;
   height: auto;
+  align-content: center;
 }
 
 .login-form {
   width: 320px;
   padding: 30px;
-  background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  background: linear-gradient(to bottom right, #101726, #1E2940);
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .login-form label {
@@ -118,22 +130,23 @@ body {
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 10px;
-  color: #333;
+  color: #F2F2F2;
 }
 
 .login-form h2 {
   text-align: center;
   margin-bottom: 20px;
   justify-content: center;
-  color:#333;
+  color:#F2F2F2;
 }
+
 
 .login-form input {
   display: block;
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #737373;
   border-radius: 3px;
   font-size: 1rem;
   transition: 0.3s ease;
@@ -152,19 +165,25 @@ body {
   transition: 0.3s ease;
 }
 .login-form input:focus {
-  border-color: #3498db;
+  border-color: #73737b;
   outline: none;
 }
 
 .login-form button:hover {
-  background-color: #555;
+  background-color: #737373;
+}
+
+#error-msg{
+  color: red; 
+  margin-top: 10px;
+  text-align: center;
 }
 
 .logout-btn {
-  background-color: #ff4d4d;
-  color: #fff;
+  background-color: #ff4d4d; 
+  color: #F2F2F2;
   border: none;
-  padding: 8px 16px;
+  padding: 3px 6px;
   border-radius: 3px;
   cursor: pointer;
   margin-right: 20px;
@@ -177,7 +196,7 @@ body {
   transform: translateX(-50%);
   font-size: 1.3rem;
   font-weight: 500;
-  color: #fff;
+  color: #F2F2F2;
   pointer-events: none;
 }
 
@@ -186,13 +205,18 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  background-image: url(../IMG/fondoTareas.png);
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
 }
 
 .task-form {
-  background-color: #f1f1f1;
+  background-color: #1E2940;
   padding: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
+  color: #F2F2F2;
 }
 
 .task-form h2 {
@@ -213,21 +237,23 @@ body {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #333;
-  color: #fff;
+  background-color: #737373;
+  color: #F2F2F2; 
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .task-list {
-  background-color: #f1f1f1;
+  background-color: #1E2940;
   padding: 20px;
   border-radius: 5px;
+  color: #F2F2F2;
 }
 
 .task-list h2 {
   margin-top: 0;
+  text-align: center;
 }
 
 .task-list ul {
@@ -241,6 +267,22 @@ body {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  gap: 10px;
+}
+
+.task-list li span {
+  flex: 1;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+.task-list li select {
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+.task-list li button {
+  flex-shrink: 0;
 }
 
 .task-list li:last-child {
@@ -248,8 +290,8 @@ body {
 }
 
 .task-list button {
-  background-color: #333;
-  color: #fff;
+  background-color: #737373;
+  color: #F2F2F2;
   border: none;
   padding: 5px 10px;
   border-radius: 3px;
@@ -261,8 +303,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: #101726;
   padding: 20px;
+  color: #F2F2F2;
 }
 
 .chart-container {
@@ -272,6 +315,7 @@ body {
 
 .chart-container h2 {
   text-align: center;
+  color: #F2F2F2; 
 }
 
 @media (max-width: 767px) {
@@ -296,4 +340,49 @@ body {
   .login-form {
     width: 100%;
   }
+}
+
+.tarea-item {
+  background-color: #1E2940;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  word-break: break-word;
+}
+
+.tarea-titulo {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.tarea-estado {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 4px;
+}
+
+.tarea-desc {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.btn-eliminar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  color: red;
 }

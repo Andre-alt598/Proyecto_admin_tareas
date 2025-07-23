@@ -1,44 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diseño Dividido</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body class="login-page">
   <div class="title-bar">
     <h1>Gestor de Tareas</h1>
   </div>
+
   <div class="container">
     <div class="left-side">
       <div class="text-area">
         <p>¡Bienvenido a nuestra aplicación de gestión de tareas! Estamos emocionados de 
           que hayas decidido usar nuestra aplicación para organizar tus tareas diarias. Con esta 
           herramienta, podrás crear listas, priorizar tareas y marcar las completadas de manera 
-          fácil y rápida. Esperamos que te sea útil para aumentar tu productividad y mantenerte 
-          organizado. ¡Manos a la obra!</p>
+          fácil y rápida. ¡Manos a la obra!</p>
       </div>
       <div class="image-area">
-        <img src="IMG/imagen muestra.jpg" alt="Imagen de muestra">
+        <img src="{{ url_for('static', filename='img/imagen muestra.jpg') }}" alt="Imagen de muestra">
       </div>
     </div>
+
     <div class="right-side">
-      <form class="login-form" >
+      <form class="login-form" method="POST" action="/login">
         <h2>Iniciar sesión</h2>
+
+        {% if error %}
+          <p class="error" style="color: red;">{{ error }}</p>
+        {% endif %}
+
         <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" placeholder="Escribe tu usuario" required>
+        <input type="text" name="usuario" placeholder="Escribe tu usuario" required>
+
         <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" placeholder="Escribe tu contraseña" required>
+        <input type="password" name="contrasena" placeholder="Escribe tu contraseña" required>
+
         <button type="submit">Entrar</button>
-        <p id="error-msg"></p>
       </form>
     </div>
   </div>
+
   <div class="footer">
     <p>&copy; 2025 Todos los derechos reservados</p>
   </div>
-  <script src="BD/login.js"></script>
 </body>
 </html>

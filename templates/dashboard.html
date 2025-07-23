@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dashboard-page">
+
+  <div class="title-bar">
+    <div id="saludo-usuario" class="saludo">
+      ¡Hola {{ usuario }}!
+    </div>
+    <a href="{{ url_for('logout') }}">
+      <button class="logout-btn" style="padding: 4px 8px; font-size: 0.85rem;" title="Cerrar sesión">
+      <span class="texto">Cerrar sesión</span>
+      <img class="icono" src="{{ url_for('static', filename='img/cerrarSesion.png') }}" alt="Cerrar sesión" style="width: 16px; height: 16px;">
+      </button>
+    </a>
+
+  </div>
+
+  <div class="container">
+    <div class="left-side">
+      <h1 class="titulo-dashboard">Dashboard</h1>
+
+      <div class="task-form">
+        <h2>Nueva Tarea</h2>
+        <input type="text" id="task-input" placeholder="Título de la tarea" required />
+        <textarea id="taskDescripcion" placeholder="Añade una descripción" rows="3"></textarea>
+        <select id="task-status">
+          <option value="En espera">En espera</option>
+          <option value="En progreso">En progreso</option>
+          <option value="Completada">Completada</option>
+        </select>
+        <button id="save-task">Guardar</button>
+      </div>
+
+      <div class="task-list">
+        <h2>Mis Tareas</h2>
+        <ul id="task-list"></ul>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="chart-container">
+        <h2>Resumen de Tareas</h2>
+        <canvas id="task-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+
+  <!-- Chart.js y plugin datalabels -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  <!-- Script principal -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
