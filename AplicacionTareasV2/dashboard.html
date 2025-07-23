@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body class="dashboard-page">
+  <!-- Barra superior con saludo y botón de cierre de sesión -->
   <div class="title-bar">
     <div id="saludo-usuario" class="saludo"></div>
     <button id="cerrar-sesion" class="logout-btn" title="Cerrar sesión">
@@ -14,11 +15,15 @@
       <img class="icono" src="IMG/cerrarSesion.png" alt="Cerrar sesión">
     </button>
   </div>
+
+   <!-- Contenedor principal -->
   <div class="container">
+    <!-- Lado izquierdo: formulario y lista de tareas -->
     <div class="left-side">
       <h1 class="titulo-dashboard">Dashboard</h1>
       <div class="task-form">
         <h2>Nueva Tarea</h2>
+        <!-- Inputs para crear nueva tarea -->
         <input type="text" id="task-input" placeholder="Titulo de la tarea" required>
         <textarea id="taskDescripcion" placeholder="Añade una descripción" rows="3"></textarea>
         <select id="task-status">
@@ -27,12 +32,15 @@
           <option value="Completada">Completada</option>
         </select>
         <button id="save-task">Guardar</button>
+        <div id="mensaje-prioridad" class="mensaje-prioridad"></div>
       </div>
+      <!-- Lista de tareas del usuario -->
       <div class="task-list">
         <h2>Mis Tareas</h2>
         <ul id="task-list"></ul>
       </div>
     </div>
+    <!-- Lado derecho: gráfico de resumen -->
     <div class="right-side">
       <div class="chart-container">
         <h2>Resumen de Tareas</h2>
@@ -40,13 +48,16 @@
       </div>
     </div>
   </div>
+  
+  <!-- Pie de página -->
   <div class="footer">
     <p>&copy; 2025 Todos los derechos reservados</p>
   </div>
+  <!-- Librerías necesarias -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="JS/dashboard.js"></script>
 </body>
 </html>

@@ -1,11 +1,6 @@
-# 📋 Aplicación de Gestión de Tareas
+# 🧠 Aplicación de Gestión de Tareas con IA
 
-Una aplicación web para crear, gestionar y visualizar tareas por usuario, desarrollada con:
-
-- 🔧 **Frontend:** HTML, CSS y JavaScript
-- 🚀 **Backend:** Node.js + Express
-- 🗄️ **Base de datos:** MariaDB / MySQL
-- 🔐 **Autenticación:** JSON Web Token (JWT)
+Aplicación web que permite a los usuarios registrar, visualizar y clasificar tareas usando una interfaz moderna, y una IA que sugiere automáticamente la prioridad de cada una.
 
 ---
 
@@ -15,6 +10,19 @@ Una aplicación web para crear, gestionar y visualizar tareas por usuario, desar
 - Creación, visualización, edición y eliminación de tareas
 - Visualización gráfica de estado de tareas (Chart.js)
 - Panel de usuario personalizado
+- Responsive adaptable a todos los dispositivos
+
+---
+
+## 🚀 Tecnologías utilizadas
+
+> Se usa una combinación de tecnologías de frontend, backend e inteligencia artificial:
+
+- **Frontend**: HTML5, CSS3, JavaScript puro
+- **Backend**: Node.js con Express para API REST
+- **IA**: Flask (Python) + Scikit-learn (clasificación de prioridad)
+- **Base de datos**: MariaDB
+- **Gráficos**: Chart.js
 
 ---
 
@@ -43,12 +51,23 @@ AplicacionTareas/
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/AplicacionTareas.git
+git clone https://github.com/Andre-alt598/Proyecto_admin_tareas.git
 cd AplicacionTareas/backend
 
 ### 2. Instala dependencias del backend
 
 npm install
+
+### 🔹 Node.js Backend
+```bash
+npm install
+npm run dev
+```
+### 🔹 Flask (Servidor IA)
+```bash
+pip install flask scikit-learn
+python app.py
+```
 
 ### 3. Crea el archivo .env
 
@@ -67,11 +86,30 @@ Desde HeidiSQL, MySQL Workbench o consola:
 - Ejecuta el script: backend/sql/tareas_db.sql
 
 ▶️ Ejecutar la aplicación
-Desde la carpeta backend/:
+Desde la carpeta backend-tareas/:
 
 node server.js
 
 Luego abre en tu navegador el archivo frontend/index.html o usa Live Server.
+---
+
+## ✅ Funcionalidades principales
+
+- ✔ Registro e inicio de sesión con autenticación por token
+- ✔ Crear, editar y eliminar tareas
+- ✔ Clasificación automática de prioridad con modelo IA (Flask)
+- ✔ Visualización de tareas en gráfico de pastel
+- ✔ Sugerencias inteligentes de tareas importantes
+
+---
+
+## 💡 Recomendaciones
+
+- Agrega validación en el frontend para campos vacíos
+- Elimina tareas completadas con botón visible
+- Usa un `.env` para tus credenciales y puertos
+
+---
 
 📌 Notas
 

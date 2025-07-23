@@ -1,12 +1,16 @@
+// Espera a que el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
+  // Escucha el envío del formulario de registro
   document.getElementById("form-register").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Obtener valores de los campos
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
     const contrasena = document.getElementById("contrasena").value;
 
     try {
+      // Enviar solicitud al backend para registrar
       const res = await fetch("http://localhost:3000/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
